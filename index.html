@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[İsim] — Pixel Art Portfolio</title>
+  <meta name="description" content="Pixel artist portfolio — [Kısa açıklama]" />
+  <!-- Sanatsal başlık fontu ve logo için pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">[Adın]</a>
+      <nav class="nav">
+        <a href="#home">Anasayfa</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#about">Hakkımda</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Pixel Art Portfolio</h1>
+          <p>Pixel artist • Game assets • Illustrations</p>
+          <p class="cta-row">
+            <a class="btn" href="#gallery">Portfolyöye Git</a>
+            <a class="btn outline" href="mailto:you@example.com">İletişime Geç</a>
+          </p>
+        </div>
+        <div class="hero-art-wrap">
+          <!-- HERO GÖRSELİNİ images/hero.png olarak ekle -->
+          <img src="images/hero.png" alt="Hero pixel art" class="pixel-art" id="hero-art">
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <h2>Galeri</h2>
+        <p class="muted">Tıklayarak büyük görüntüle</p>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Örnek görseller: images/art1.png ... -->
+          <img src="images/art1.png" data-full="images/art1@2x.png" alt="Art 1" class="gallery-item pixel-art" loading="lazy">
+          <img src="images/art2.png" data-full="images/art2@2x.png" alt="Art 2" class="gallery-item pixel-art" loading="lazy">
+          <img src="images/art3.png" data-full="images/art3@2x.png" alt="Art 3" class="gallery-item pixel-art" loading="lazy">
+          <img src="images/art4.png" data-full="images/art4@2x.png" alt="Art 4" class="gallery-item pixel-art" loading="lazy">
+          <img src="images/art5.png" data-full="images/art5@2x.png" alt="Art 5" class="gallery-item pixel-art" loading="lazy">
+          <img src="images/art6.png" data-full="images/art6@2x.png" alt="Art 6" class="gallery-item pixel-art" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>Hakkımda</h2>
+        <p>Buraya kısa biyografi, stilin, kullandığın araçlar (Aseprite, Photoshop, vs.) ve commission bilgisi ekleyebilirsin.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>İletişim</h2>
+        <p>Projeler ve commission için e-posta: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>Sosyal: 
+          <a href="#" target="_blank" rel="noopener">Instagram</a> · 
+          <a href="#" target="_blank" rel="noopener">ArtStation</a> · 
+          <a href="#" target="_blank" rel="noopener">Twitter</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> [Adın]. Tüm hakları saklıdır.</small>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX / MODAL -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Kapat">✕</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="Önceki">‹</button>
+    <img id="lbImage" src="" alt="Büyük görüntü" class="pixel-art">
+    <button class="lightbox-next" id="lbNext" aria-label="Sonraki">›</button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
