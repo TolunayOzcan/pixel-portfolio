@@ -1,0 +1,12 @@
+This is a placeholder for the actual art images. Users should replace these files with their actual artwork:
+
+- art1.png (replace with image3 from user)
+- art2.png (replace with image4 from user)  
+- art3.png (replace with image5 from user)
+- art4.png (replace with image6 from user)
+
+For high-resolution lightbox versions, also include:
+- art1@2x.png
+- art2@2x.png  
+- art3@2x.png
+- art4@2x.png

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeri — Pixel Art Portfolio</title>
+  <meta name="description" content="Pixel art galeri — 4 sanat eseri" />
+  <!-- Sanatsal başlık fontu ve logo için pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Gallery specific styles */
+    .gallery-main {
+      padding: 44px 0;
+      min-height: 80vh;
+    }
+    
+    .gallery-title {
+      font-family: "Amatic SC", cursive;
+      font-size: 48px;
+      text-align: center;
+      margin: 0 0 12px;
+      color: var(--accent2);
+      text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    
+    .gallery-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+    
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .art-item {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .art-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    .art-title {
+      font-family: "Amatic SC", cursive;
+      font-size: 28px;
+      color: var(--accent);
+      margin: 0 0 16px;
+      text-shadow: 0 2px 8px rgba(163,214,255,0.3);
+    }
+    
+    .art-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .art-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: #08202a;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(163,214,255,0.2);
+    }
+    
+    .back-link:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(163,214,255,0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .art-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .gallery-title {
+        font-size: 36px;
+      }
+      
+      .art-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">[Tolunay Özcan]</a>
+      <nav class="nav">
+        <a href="index.html#home">Anasayfa</a>
+        <a href="index.html#gallery">Galeri</a>
+        <a href="index.html#about">Hakkımda</a>
+        <a href="index.html#contact">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="gallery-main">
+    <div class="container">
+      <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+      
+      <h1 class="gallery-title">Sanat Galerisi</h1>
+      <p class="gallery-subtitle">Pixel art koleksiyonu - Tıklayarak büyük boyutta görüntüleyin</p>
+      
+      <div class="art-grid">
+        <div class="art-item">
+          <h2 class="art-title">Art 1</h2>
+          <img src="images/art1.png" alt="Art 1" class="art-image pixel-art" data-full="images/art1@2x.png" loading="lazy">
+        </div>
+        
+        <div class="art-item">
+          <h2 class="art-title">Art 2</h2>
+          <img src="images/art2.png" alt="Art 2" class="art-image pixel-art" data-full="images/art2@2x.png" loading="lazy">
+        </div>
+        
+        <div class="art-item">
+          <h2 class="art-title">Art 3</h2>
+          <img src="images/art3.png" alt="Art 3" class="art-image pixel-art" data-full="images/art3@2x.png" loading="lazy">
+        </div>
+        
+        <div class="art-item">
+          <h2 class="art-title">Art 4</h2>
+          <img src="images/art4.png" alt="Art 4" class="art-image pixel-art" data-full="images/art4@2x.png" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> [Tolunay Özcan]. Tüm hakları saklıdır.</small>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX / MODAL -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Kapat">✕</button>
+    <button class="lightbox-prev" id="lbPrev" aria-label="Önceki">‹</button>
+    <img id="lbImage" src="" alt="Büyük görüntü" class="pixel-art">
+    <button class="lightbox-next" id="lbNext" aria-label="Sonraki">›</button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
